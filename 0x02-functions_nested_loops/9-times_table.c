@@ -33,6 +33,7 @@ putchar(' ');
 else
 _putchar(' ');
 }
+/* comment*/
 }
 _putchar('\n');
 }
