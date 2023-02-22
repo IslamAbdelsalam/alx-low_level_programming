@@ -25,6 +25,12 @@ _putchar(mult + '0');
 if (j != 9)
 {
 _putchar(',');
+if (mult < 10)
+{
+putchar(' ');
+putchar(' ');
+}
+else
 _putchar(' ');
 }
 }
