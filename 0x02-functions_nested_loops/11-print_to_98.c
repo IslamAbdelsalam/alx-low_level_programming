@@ -12,14 +12,26 @@ int i;
 if (n > 98)
 {
 for (i = n; i >= 98; i--)
-printf("%i, ", i);
+{
+printf("%i", i);
+if (i != 98)
+{
+printf(", ");
+}
+}
 }
 else if (n == 98)
 printf("98");
 else
 {
 for (i = n; i <= 98; i++)
-printf("%i, ", i);
+{
+printf("%i", i);
+if (i != 98)
+{
+printf(", ");
+}
+}
 }
 printf("\n");
 }
