@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * rev_string - print our string in reverse
  * @s: pointer to our string
@@ -12,25 +10,13 @@ void rev_string(char *s)
 	size = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
-	{
 		size++;
-	}
-	if (size % 2 == 0)
-	{
-		size /= 2;
-	}
-	else
-	{
-		size /= 2;
-		size--;
-	}
-	j = size;
 
-	for (i = 0; i < j; i++)
+	for (j = 0; j < size; j++)
 	{
-		temp = s[i];
-		s[i] = s[size];
-		s[size] = temp;
+		temp = s[j];
+		s[j] = s[size - 1];
+		s[size - 1] = temp;
 		size--;
 	}
 }
