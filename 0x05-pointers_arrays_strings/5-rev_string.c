@@ -19,11 +19,11 @@ void rev_string(char *s)
 	if (size % 2 == 0)
 	{
 		size /= 2;
+		size--;
 	}
 	else
 	{
 		size /= 2;
-		size--;
 	}
 	j = size;
 
