@@ -16,7 +16,15 @@ void rev_string(char *s)
 		size++;
 	}
 	size--;
-	j = size / 2;
+	if (size % 2 == 0)
+	{
+		size /= 2;
+	}
+	else
+	{
+		size /= 2;
+		size--;
+	}
 
 	for (i = 0; i < j; i++)
 	{
