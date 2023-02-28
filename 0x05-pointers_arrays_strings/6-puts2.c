@@ -1,4 +1,3 @@
-#include <main.h>
 /**
  * puts2 - print our even char in our string
  * @str: pointer to our string
