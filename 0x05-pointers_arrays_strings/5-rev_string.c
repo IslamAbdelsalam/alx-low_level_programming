@@ -25,6 +25,7 @@ void rev_string(char *s)
 		size /= 2;
 		size--;
 	}
+	j = size;
 
 	for (i = 0; i < j; i++)
 	{
