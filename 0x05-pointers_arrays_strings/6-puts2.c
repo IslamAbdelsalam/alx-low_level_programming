@@ -5,12 +5,12 @@
  */
 void puts2(char *str)
 {
-	int size = 0, i, j;
+	int size = 0, i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] % 2 == 0)
-			_putchar(str[j]);
+			_putchar(str[i]);
 	}
 	_putchar(10);
 }
