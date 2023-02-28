@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_array - print our array element sperated by commas
+ * print_array - print our array element separated by commas
  *
  * @a: pointer to our string
  *
@@ -12,7 +12,7 @@ void print_array(int *a, int n)
 
 	for (i = 0; i < n; i++)
 	{
-		_putchar(a[i]);
+		printf("%i", a[i]);
 		if (i < n - 1)
 		{
 			_putchar(',');
