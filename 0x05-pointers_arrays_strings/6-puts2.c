@@ -1,3 +1,4 @@
+#include <main.h>
 /**
  * puts2 - print our even char in our string
  * @str: pointer to our string
@@ -10,7 +11,7 @@ void puts2(char *str)
 		size++;
 	size--;
 
-	for( j = 0; j < size; j++ )
+	for (j = 0; j < size; j++)
 	{
 		_putchar(str[j]);
 	}
