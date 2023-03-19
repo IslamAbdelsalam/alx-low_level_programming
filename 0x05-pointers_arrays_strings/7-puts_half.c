@@ -14,11 +14,12 @@ void puts_half(char *str)
 	{
 		if (size % 2 == 0)
 		{
-			if (i > (size / 2))
+			if (i >= (size / 2))
 				_putchar(str[i]);
 		}
 		else
 		{
+			size--;
 			if (i > ((size / 2) - 1))
 				_putchar(str[i]);
 		}
