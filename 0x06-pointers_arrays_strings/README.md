@@ -1,1 +1,1 @@
- pointers and arrays 
+## practicing on pointers and arrays an strings ##
