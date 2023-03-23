@@ -1,1 +1,1 @@
-** Never Give up **
+** pointers and arrays **
