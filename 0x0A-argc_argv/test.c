@@ -1,5 +1,5 @@
-#include <stdio.h>
+#include "main.h"
 
 int main(int argc, char *argv[]){
-	printf("%i",argc);
+	printf("%i",atoi("093i0"));
 }
