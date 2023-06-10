@@ -3,7 +3,8 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
+
 int _putchar(char c);
-float atoi(char *str);
 
 #endif /* I'm Solo -__= */
