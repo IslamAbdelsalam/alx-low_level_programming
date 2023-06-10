@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	printf("%0.0f\n", atoi(argv[1]) * atoi(argv[2]));
 
 	return (0);
 }
@@ -31,10 +31,10 @@ int main(int argc, char *argv[])
  *
  * Return: res is converted string to int
  */
-int atoi(char *str)
+float atoi(char *str)
 {
 	int i;
-	int res = 0;
+	float res = 0;
 
 	for (i = 0; str[i] != '\0'; ++i)
 		res = res * 10 + str[i] - '0';
