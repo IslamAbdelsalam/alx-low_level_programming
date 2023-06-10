@@ -1,5 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
+/*
+ * Task 4 in 0x0A. C - argc, argv
+ * Purpose : adds positive numbers.
+ */
 
 /**
  * main - adds positive numbers.
