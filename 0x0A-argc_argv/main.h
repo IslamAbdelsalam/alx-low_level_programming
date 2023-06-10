@@ -4,5 +4,6 @@
 
 #include <stdio.h>
 int _putchar(char c);
+int atoi(char *str);
 
 #endif /* I'm Solo -__= */
