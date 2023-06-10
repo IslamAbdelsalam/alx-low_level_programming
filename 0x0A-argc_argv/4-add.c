@@ -1,56 +1,37 @@
 #include "main.h"
-/*
- * Task 4 in 0x0A. C - argc, argv
- * Purpose : adds positive numbers.
- */
 
 /**
- * main - adds positive numbers.
- * @argc: argument count
+ * main - Adds positive numbers using argv & argv.
+ * @argc: argument counter
  * @argv: argument vector
- * Return: (0) success or (1) faild
- */
-
+ * Return: 0 if it faild when input isn't a number
+ *		1 if the symbol can't be a number
+ *		result if everything is Ok.
+*/
 int main(int argc, char *argv[])
 {
-	int a, temp;
-	char *c;
+	int i;
+	int res = 0;
 
-	a = 0;
-
-	if (argc == 1)
+	if (argc <= 2)
 	{
 		printf("0\n");
 		return (0);
 	}
-	while (--argc)
+	else
 	{
-		temp = -1;
-		argv++;
-		c = *argv;
-		while ((*c) != '\0')
+		for (i = 1; i < argc; ++i)
 		{
-			if (temp == -1)
+			if (atoi(argv[i]))
 			{
-				temp = 0;
-			}
-			if ((*c >= '0') && (*c <= '9'))
-			{
-				temp = temp + (*c - '0');
-				if ((*(c + 1) != '\0'))
-				{
-					temp = temp * 10;
-				}
+				res += atoi(argv[i]);
 			}
 			else
 			{
 				printf("Error\n");
 				return (1);
 			}
-			c++;
 		}
-		a = a + temp;
 	}
-	printf("%d\n", a);
-	return (0);
+	return (printf("%d\n", res));
 }
