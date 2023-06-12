@@ -20,7 +20,7 @@ char *_strdup(char *str)
 	}
 
 	size = strlen(str);
-	printf("Size = %d\n", size);
+	/* printf("Size = %d\n", size); */
 	str_arr = malloc(size * sizeof(char) + 1);
 
 	for (i = 0; i <= size; ++i)
