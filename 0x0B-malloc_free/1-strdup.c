@@ -23,6 +23,9 @@ char *_strdup(char *str)
 	/* printf("Size = %d\n", size); */
 	str_arr = malloc(size * sizeof(char) + 1);
 
+	if (str_arr == NULL)
+		return (NULL);
+
 	for (i = 0; i <= size; ++i)
 		str_arr[i] = str[i];
 
