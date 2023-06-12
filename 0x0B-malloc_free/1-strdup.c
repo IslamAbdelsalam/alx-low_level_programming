@@ -19,9 +19,9 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	size = strlen(str) + 1;
+	size = strlen(str);
 	printf("Size = %d\n", size);
-	str_arr = malloc(size * sizeof(char));
+	str_arr = malloc(size * sizeof(char) + 1);
 
 	for (i = 0; i <= size; ++i)
 		str_arr[i] = str[i];
