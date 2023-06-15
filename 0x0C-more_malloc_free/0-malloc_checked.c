@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * malloc_checked - allocates memory using malloc.
- * @b: array size
+ * @b: array length
  * Return: array refrance or NULL
  */
 void *malloc_checked(unsigned int b)
