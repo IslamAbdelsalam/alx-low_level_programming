@@ -67,7 +67,7 @@ int startIndex(char *s, int index)
 }
 
 /**
- * endIndex - returns last index 
+ * endIndex - returns last index
  * @s: input string
  * @index: starting index
  * Return: index of last index of non-space char
@@ -80,7 +80,7 @@ int endIndex(char *s, int index)
 }
 
 /**
- * countWords - counts numbers of words 
+ * countWords - counts numbers of words
  * @s: input
  * Return: number of words
  */
