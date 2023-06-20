@@ -1,14 +1,14 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef dog_H
+#define dog_H
 
-/*Contents of the header file*/
-/***
- * struct 'dog' - Represents info about dog
+/**
+ * struct dog - a dog's basic info
+ * @name: First member
+ * @age: Second member
+ * @owner: Third member
  *
- * @name: name of the dog
- * @age: Dog age
- * @owner: Dog owner name
-*/
+ * Description: Longer description
+ */
 struct dog
 {
 	char *name;
@@ -17,4 +17,4 @@ struct dog
 };
 
 
-#endif /*HEADER_FILE_NAME_H */
+#endif /* MAIN_H */
