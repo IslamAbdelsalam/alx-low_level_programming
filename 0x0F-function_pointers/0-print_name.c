@@ -2,7 +2,7 @@
 
 /**
  * print_name - this function will point to another functions
- *				 when user choise using *f
+ *				when user choise using *f
  * @name: user's name
  * @f: pointer to a function
  */
