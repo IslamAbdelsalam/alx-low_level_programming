@@ -3,3 +3,7 @@
 0x0A-argc_argv/_atoi.c
 0x0B-malloc_free/s
 0x0D-preprocessor/test.c
+/Learning/
+.gitignore
+.gitignore
+0x0F-function_pointers/_putchar.c
