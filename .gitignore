@@ -8,3 +8,4 @@
 .gitignore
 0x0F-function_pointers/_putchar.c
 0x0F-function_pointers/Test.c
+0x10-variadic_functions/0-main.c
