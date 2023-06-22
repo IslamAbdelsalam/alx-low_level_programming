@@ -6,7 +6,7 @@
  * @n: Number of arguments
  * @separator: Arguments separator
  *
- * Return: non.
+ * Author: Islam Abdelslam *__=
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -14,6 +14,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 
 	va_start(args, n);
+
+	if (n == 0)
+		return;
 
 	if (separator == NULL)
 	{
