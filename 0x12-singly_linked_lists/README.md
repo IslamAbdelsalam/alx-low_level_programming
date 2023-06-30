@@ -1,5 +1,3 @@
-Sure! Here's an example of a README.md file that provides an overview of a singly linked list:
-
 # Singly Linked List
 
 A singly linked list is a fundamental data structure that represents a sequence of elements called nodes. Each node contains two components: data and a reference (or link) to the next node in the sequence. It is called a "singly" linked list because the link only points to the next node and not to the previous one.
