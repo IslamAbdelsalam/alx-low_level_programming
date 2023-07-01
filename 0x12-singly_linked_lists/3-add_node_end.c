@@ -4,18 +4,18 @@
  * @str: node str content
  * @head: pointer to pointer to the head of the linked list
  * Return: the new node
- * Author: Islam Abdelslam
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node = (list_t *)malloc(sizeof(list_t));
-	
+
 	if (str == NULL)
 		return (NULL);
-
 	if (new_node == NULL)
+	{
+		free(new_node);
 		return (NULL);
+	}
 
 	new_node->str = strdup(str);
 	new_node->len = strlen(str);
@@ -40,9 +40,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		{
 			current = current->next;
 		}
-
 		current->next = new_node;
 	}
-
 	return (new_node);
 }
