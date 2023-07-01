@@ -4,29 +4,27 @@
  * @str: node content
  * @head: pointer to the head of the linked list
  * Return: the new node
-*/
+ */
 
 list_t *add_node(list_t **head, const char *str)
 {
+	list_t *new_node = (list_t *)malloc(sizeof(list_t));
+
 	if (str == NULL)
 		return (NULL);
 
-	list_t *newNode = (list_t *)malloc(sizeof(list_t));
-
-	if (newNode == NULL)
+	if (new_node == NULL)
 		return (NULL);
 
-	newNode->str = strdup(str);
-	if (newNode->str == NULL)
+	new_node->str = strdup(str);
+	if (new_node->str == NULL)
 	{
-		free(newNode);
+		free(new_node);
 		return (NULL);
 	}
 
-	newNode->len = strlen(newNode->str);
-	newNode->next = *head;
+	new_node->next = *head;
+	*head = new_node;
 
-	*head = newNode;
-
-	return (newNode);
+	return (new_node);
 }
