@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * list_len - print number of elements in a linked list
  * @h: function parameter store the linked list address.
