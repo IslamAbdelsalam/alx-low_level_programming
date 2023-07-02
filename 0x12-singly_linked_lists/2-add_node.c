@@ -25,7 +25,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new_node->next = *head;
+	new_node->next = *head; // كدا أنا بقولك إن العربية الي بتجر غيرناها بالجديدة
 	*head = new_node;
 
 	return (new_node);
