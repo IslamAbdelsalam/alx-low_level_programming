@@ -14,9 +14,8 @@ int pop_listint(listint_t **head)
 
 	deleteNode = *head;
 	*head = (*head)->next;
-
 	free(deleteNode);
-	deleteNode = NULL;
+	/*deleteNode = NULL;*/
 
 	return ((*head)->n);
 }
