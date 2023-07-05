@@ -15,4 +15,5 @@ void free_listint(listint_t *head)
 		head->next = NULL;
 	}
 	free(head);
+	head = NULL;
 }
