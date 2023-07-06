@@ -19,8 +19,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	nthNode->next = NULL;
 	listLen = getListLen(*head);
 
-	if (*head == NULL)
-		return (nthNode);
+	/*if (*head == NULL)
+		return (nthNode);*/
 	if (listLen + 1 < idx)
 		return (NULL);
 	else if (listLen == idx)
