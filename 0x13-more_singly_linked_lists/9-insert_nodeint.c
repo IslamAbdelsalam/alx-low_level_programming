@@ -29,7 +29,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		}
 		current->next = nthNode;
 	}
-	else if (listLen > idx)
+	else if (listLen + 1 > idx)
 	{
 		current = *head;
 		if (idx == 0)
