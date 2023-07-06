@@ -12,13 +12,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	size_t listLen = 0;
 	listint_t *current = *head, *temp;
 
-	if (nthNode == NULL || *head == NULL || head == NULL)
+	if (nthNode == NULL)
 		return (NULL);
+
 	nthNode->n = n;
 	nthNode->next = NULL;
 	listLen = getListLen(*head);
 
-	if (listLen+1 < idx)
+	if (*head == NULL)
+		return (nthNode);
+	if (listLen + 1 < idx)
 		return (NULL);
 	else if (listLen == idx)
 	{
