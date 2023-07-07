@@ -99,4 +99,4 @@ Bit manipulation is useful in various scenarios, including:
 ## Conclusion
 Bit manipulation provides a powerful set of techniques for working with individual bits within binary numbers. By utilizing bitwise operators and shift operators, you can efficiently perform operations such as setting, clearing, toggling bits, counting set bits, and more. Understanding bit manipulation is valuable in various domains, ranging from algorithmic optimizations to embedded systems programming.
 
-By Islam Abdelslam 
+By Islam Abdelslam
