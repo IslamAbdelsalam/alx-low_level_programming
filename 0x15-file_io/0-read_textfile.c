@@ -1,48 +1,47 @@
-
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output
- * @filename: name of file to read
- * @letters: number of letters to read and print
+ * read_textfile - Read a text file and print its contents to the console.
+ * @filename: The name of the file to be read.
+ * @letters: The maximum number of characters to be read.
  *
- * Return: actual number of letters read and printed
+ * Return: The number of characters read and printed, or 0 on failure.
+ *         Possible failure reasons include failure to open or read the file,
+ *         an empty file, or a letters parameter of 0.
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t read_count, write_count;
-	char *buffer;
+	ssize_t fp, readFile;
+	size_t i = 0, len = 0;
+	char *buffer = (char *)malloc(letters);
 
-	if (filename == NULL)
+	if (filename == NULL || letters == 0 || buffer == NULL)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+	fp = open(filename, O_RDONLY);
+
+	if (fp < 0)
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
+	readFile = read(fp, buffer, letters);
+
+	if (readFile < 0)
 		return (0);
 
-	read_count = read(fd, buffer, letters);
-	if (read_count < 0)
+	for (; i <= letters && buffer[i] != '\0'; i++)
 	{
-		free(buffer);
-		return (0);
+		_putchar(buffer[i]);
+		len++;
 	}
 
-	write_count = write(STDOUT_FILENO, buffer, read_count);
-	if (write_count < 0)
+	if ((size_t)readFile < letters && readFile != 0)
 	{
-		free(buffer);
-		return (0);
+		len = readFile + 1;
+		_putchar('\0');
 	}
 
+	close(fp);
 	free(buffer);
-	close(fd);
-
-	return (write_count);
+	return (len);
 }
-
