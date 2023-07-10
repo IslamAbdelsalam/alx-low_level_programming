@@ -14,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, readFile;
 	size_t i = 0, len = 0;
-	char *buffer = (char *)malloc(letters+100);
+	char *buffer = (char *)malloc(letters + 100);
 
 	if (filename == NULL || letters == 0 || buffer == NULL)
 		return (0);
@@ -29,15 +29,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (readFile < 0)
 		return (0);
 
-	for (; i <= letters && buffer[i] != '\0'; i++)
+	for (; i < letters && buffer[i] != '\0'; i++)
 	{
 		_putchar(buffer[i]);
 		len++;
 	}
 
-	if ((size_t)readFile < letters && readFile != 0)
+	if (readFile < (int)letters || readFile == 0)
 	{
-		len = readFile + 1;
+		len++;
 		_putchar('\0');
 	}
 
