@@ -20,12 +20,6 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)/* checked */
 		return (-1);
 
-	if (text_content == NULL)/* checked */
-	{
-		creat(filename, 0600);
-		return (1);
-	}
-
 	f = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
 	w = write(f, text_content, cnt);
 
