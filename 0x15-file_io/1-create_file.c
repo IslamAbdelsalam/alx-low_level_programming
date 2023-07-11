@@ -13,7 +13,6 @@
 int create_file(const char *filename, char *text_content)
 {
 	int f, w;
-	char *buffer;
 	size_t cnt;
 
 	cnt = strlen(text_content);
@@ -27,22 +26,14 @@ int create_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	buffer = (char *)malloc(sizeof(char) * (strlen(text_content) + 10));
-
-	if (buffer == NULL)/* checked */
-		return (-1);
-
 	f = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
 	w = write(f, text_content, cnt);
 
 	if (f == -1 || w == -1)
 	{
-		close(f);
-		free(buffer);
 		return (-1);
 	}
 
 	close(f);
-	free(buffer);
 	return (1);
 }
