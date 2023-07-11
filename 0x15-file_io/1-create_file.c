@@ -9,15 +9,19 @@
  *			-1 on: file can not be created,
  *				file can not be written, write “fails”
  *				filename is NULL
-*/
+ */
 int create_file(const char *filename, char *text_content)
 {
 	int f, w;
-	size_t cnt;
+	size_t cnt = 0;
 
-	cnt = strlen(text_content);
+	if (text_content != NULL)
+	{
+		for (; text_content[cnt];)
+			cnt++;
+	}
 
-	if (filename == NULL)/* checked */
+	if (filename == NULL) /* checked */
 		return (-1);
 
 	f = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
