@@ -7,7 +7,7 @@
  */
 void copy(char *source, char *target)
 {
-	int o_source, o_target, checkWrite, checkClose, c;
+	int o_source, o_target, checkWrite, checkClose;
 	char *buffer[1024];
 	ssize_t n;
 	mode_t new_perms = 0664;
@@ -15,15 +15,18 @@ void copy(char *source, char *target)
 	o_source = open(source, O_RDONLY);
 	if (o_source == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
 	o_target = open(target, O_RDWR | O_TRUNC);
 	if (o_target == -1)
-		c = creat(target, new_perms);
-	if (c == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
+		o_target = creat(target, new_perms);
+		chmod(target, new_perms);
+	}
+	if (o_target == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", target);
 		exit(99);
 	}
 	while ((n = read(o_source, buffer, sizeof(buffer))) > 0)
@@ -31,14 +34,14 @@ void copy(char *source, char *target)
 		checkWrite = write(o_target, buffer, n);
 		if (checkWrite == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", target);
 			exit(99);
 		}
 	}
 	checkClose = close(o_source);
 	if (checkClose == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", o_source);
 		exit(100);
 	}
 	close(o_target);
