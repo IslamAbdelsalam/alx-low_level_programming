@@ -9,7 +9,6 @@
  *			-1 on: file can not be created,
  *				file can not be written, write “fails”
  *				filename is NULL
- *
 */
 int create_file(const char *filename, char *text_content)
 {
@@ -18,10 +17,11 @@ int create_file(const char *filename, char *text_content)
 	size_t cnt;
 
 	cnt = strlen(text_content);
+
 	if (filename == NULL)/* checked */
 		return (-1);
 
-	if (text_content == NULL)
+	if (text_content == NULL)/* checked */
 	{
 		creat(filename, 0600);
 		return (1);
@@ -33,7 +33,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	f = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
-	w = write(f, buffer, cnt);
+	w = write(f, text_content, cnt);
 
 	if (f == -1 || w == -1)
 	{
