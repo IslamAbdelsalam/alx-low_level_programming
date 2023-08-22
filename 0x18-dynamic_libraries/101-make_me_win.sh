@@ -1,2 +1,2 @@
 #!/bin/bash
-LD_PRELOAD=./gm.so echo "--> Please make me win!"
+LD_PRELOAD=./libc.so echo "--> Please make me win!"
