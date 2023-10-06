@@ -10,7 +10,7 @@ void copy(char *source, char *target)
 	int o_source, o_target, checkWrite, checkClose;
 	char *buffer[1024];
 	ssize_t n;
-	mode_t new_perms = 0664;
+	mode_t new_perms = (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	o_source = open(source, O_RDONLY);
 	if (o_source == -1)
@@ -18,12 +18,12 @@ void copy(char *source, char *target)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		exit(98);
 	}
-	o_target = open(target, O_RDWR | O_TRUNC);
-	if (o_target == -1)
-	{
-		o_target = creat(target, new_perms);
-		chmod(target, new_perms);
-	}
+	o_target = open(target,  O_CREAT | O_RDWR | O_TRUNC, new_perms);
+	// if (o_target == -1)
+	// {
+	// 	o_target = creat(target, new_perms);
+	// 	chmod(target, new_perms);
+	// }
 	if (o_target == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", target);
